@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1EADF"/><stop offset="1" stop-color="#E2D5C2"/></linearGradient>
+    <pattern id="linen" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 H8 M4 0 V8" stroke="#CBBBA4" stroke-width="0.6" opacity="0.45"/></pattern>
+    <radialGradient id="acrylic" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.38"/><stop offset="0.7" stop-color="#FFFFFF" stop-opacity="0.1"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.3"/></radialGradient>
+    <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#9A9DA1"/><stop offset="0.5" stop-color="#ECEEF0"/><stop offset="1" stop-color="#8D9196"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3E2A17" stop-opacity="0.22"/><stop offset="1" stop-color="#3E2A17" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#linen)"/>
+  <ellipse cx="616" cy="548" rx="166" ry="166" fill="url(#shadow)"/>
+  <path d="M600 330 Q570 250 600 200 Q630 150 680 160" stroke="url(#metal)" stroke-width="7" fill="none"/>
+  <circle cx="700" cy="150" r="58" fill="none" stroke="url(#metal)" stroke-width="9"/>
+  <circle cx="700" cy="150" r="58" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5" stroke-dasharray="40 300"/>
+  <path d="M752 180 Q820 230 840 320 L860 520" stroke="#E3B8AC" stroke-width="5" fill="none"/>
+  <g fill="#E3B8AC"><path d="M840 500 L880 500 L900 700 L820 700 Z" opacity="0.9"/><path d="M850 520 L846 700 M862 520 L862 700 M874 520 L878 700" stroke="#D29E90" stroke-width="2"/></g>
+  <circle cx="600" cy="520" r="150" fill="url(#acrylic)"/>
+  <circle cx="600" cy="520" r="150" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.85"/>
+  <circle cx="600" cy="520" r="146" fill="none" stroke="#B7A891" stroke-width="1.5" opacity="0.45"/>
+  <circle cx="600" cy="390" r="12" fill="#E9E1D3" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M480 450 A130 130 0 0 1 560 395" stroke="#FFFFFF" stroke-width="7" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M700 630 A130 130 0 0 1 650 655" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D7CBB8"/><stop offset="1" stop-color="#C8B9A2"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAE2D5"/><stop offset="1" stop-color="#DCD0BE"/></linearGradient>
+    <linearGradient id="front" x1="0" x2="1"><stop offset="0" stop-color="#F7F2EA"/><stop offset="0.6" stop-color="#F1EADF"/><stop offset="1" stop-color="#E4DACB"/></linearGradient>
+    <linearGradient id="side" x1="0" x2="1"><stop offset="0" stop-color="#D6CAB8"/><stop offset="1" stop-color="#C8BAA4"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3B2A1C" stop-opacity="0.35"/><stop offset="1" stop-color="#3B2A1C" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#wall)"/>
+  <rect y="760" width="1200" height="140" fill="url(#floor)"/>
+  <ellipse cx="640" cy="800" rx="290" ry="22" fill="url(#shadow)"/>
+  <path d="M500 296 C500 150 700 150 700 296" stroke="#4A3428" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M790 280 L860 300 L860 790 L790 800 Z" fill="url(#side)"/>
+  <path d="M790 280 L825 290 L825 330 L790 320 Z" fill="#BCAD95"/>
+  <path d="M410 280 L790 280 L790 800 L410 800 Z" fill="url(#front)"/>
+  <rect x="410" y="280" width="380" height="42" fill="#000000" opacity="0.05"/>
+  <circle cx="500" cy="302" r="7" fill="#C8BBA6"/><circle cx="700" cy="302" r="7" fill="#C8BBA6"/>
+  <path d="M410 800 L790 800" stroke="#CFC2AE" stroke-width="4"/>
+  <path d="M830 296 L830 794" stroke="#B5A68F" stroke-width="2" opacity="0.6"/>
+  <g transform="translate(940 560)"><ellipse cx="60" cy="230" rx="90" ry="12" fill="url(#shadow)"/><rect x="0" y="80" width="120" height="150" rx="10" fill="#B5624A" opacity="0.9"/><rect x="0" y="80" width="120" height="22" fill="#000000" opacity="0.08"/><path d="M30 82 C30 20 90 20 90 82" stroke="#4A3428" stroke-width="6" fill="none"/></g>
+</svg>

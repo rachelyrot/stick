@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #fbf8f3;
+  --color-cream: #f5efe6;
+  --color-sand: #ede4d6;
+  --color-stone: #ddd2c2;
+  --color-taupe: #b8a893;
+  --color-mocha: #8a7360;
+  --color-cocoa: #6b5242;
+  --color-choco: #3a2a21;
+  --color-ink: #261b15;
+  --color-olive: #6b7049;
+  --color-olive-dark: #50553a;
+  --color-olive-soft: #dfe0cc;
+  --color-clay: #b5624a;
+
+  --font-display: "Frank Ruhl Libre", "Times New Roman", serif;
+  --font-sans: "Assistant", "Heebo", system-ui, sans-serif;
+  --font-latin: "Cormorant Garamond", "Times New Roman", serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.9s var(--ease-out-soft) both;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-choco);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-olive);
+  color: var(--color-ivory);
+}
+
+/* נגישות: טבעת פוקוס עדינה ועקבית */
+:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* מראה ויניל: צל מגע עדין שמבליט את המדבקה מעל המשטח */
+.vinyl-layer svg {
+  filter: drop-shadow(0 0.6px 0.5px rgba(40, 25, 15, 0.22));
+}
+
+/* אנימציית "חיתוך" בהירו: קו מתאר שנחתך ואז מתמלא */
+.cut-line text {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: cut 3.2s var(--ease-out-soft) 0.4s forwards, fill-in 0.9s ease 2.6s forwards;
+}
+@keyframes cut {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fill-in {
+  to { fill-opacity: 1; stroke-opacity: 0; }
+}
+
+/* חשיפה בגלילה */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s var(--ease-out-soft), transform 1s var(--ease-out-soft);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .35 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* סליידרים בסגנון המותג */
+input[type="range"].range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-stone);
+  width: 100%;
+}
+input[type="range"].range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--color-choco);
+  border: 3px solid var(--color-ivory);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: grab;
+}
+input[type="range"].range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-choco);
+  border: 3px solid var(--color-ivory);
+  cursor: grab;
+}
+
+.checker {
+  background-color: #fbf8f3;
+  background-image:
+    linear-gradient(45deg, #f1ebe1 25%, transparent 25%),
+    linear-gradient(-45deg, #f1ebe1 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f1ebe1 75%),
+    linear-gradient(-45deg, transparent 75%, #f1ebe1 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

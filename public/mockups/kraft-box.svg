@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5EFE6"/><stop offset="1" stop-color="#E5D9C8"/></linearGradient>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE5D8"/><stop offset="1" stop-color="#DACDBA"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CFA97E"/><stop offset="1" stop-color="#B98F63"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DDBC94"/><stop offset="1" stop-color="#D0AD82"/></linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9825A"/><stop offset="1" stop-color="#94704B"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3E2A17" stop-opacity="0.35"/><stop offset="1" stop-color="#3E2A17" stop-opacity="0"/></radialGradient>
+    <pattern id="fiber" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M3 8h9M22 30h7M30 12h6M8 26h4" stroke="#8C6A45" stroke-width="1" opacity="0.25"/></pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#wall)"/>
+  <rect y="740" width="1200" height="160" fill="url(#surface)"/>
+  <ellipse cx="640" cy="775" rx="360" ry="30" fill="url(#shadow)"/>
+  <path d="M330 420 L410 360 L950 360 L870 420 Z" fill="url(#top)"/>
+  <path d="M870 420 L950 360 L950 712 L870 772 Z" fill="url(#side)"/>
+  <rect x="330" y="420" width="540" height="352" fill="url(#front)"/>
+  <rect x="330" y="420" width="540" height="352" fill="url(#fiber)"/>
+  <rect x="330" y="420" width="540" height="58" fill="#000000" opacity="0.06"/>
+  <path d="M330 478 L870 478" stroke="#9E7A52" stroke-width="2" opacity="0.5"/>
+  <path d="M870 478 L950 418" stroke="#7F5E3E" stroke-width="2" opacity="0.5"/>
+  <path d="M640 360 L560 420" stroke="#EFE4D1" stroke-width="10" opacity="0.9"/>
+  <path d="M560 420 L560 478" stroke="#EFE4D1" stroke-width="10" opacity="0.9"/>
+  <path d="M520 352 C540 300 600 312 600 352 M600 352 C610 300 680 306 668 352" stroke="#EFE4D1" stroke-width="8" fill="none"/>
+  <g transform="translate(160 640)"><ellipse cx="40" cy="98" rx="70" ry="10" fill="url(#shadow)"/><path d="M0 98 Q-6 30 40 0 Q86 30 80 98 Z" fill="#6B7049" opacity="0.85"/></g>
+</svg>

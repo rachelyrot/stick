@@ -1,0 +1,36 @@
+{
+  "version": "2026-11-defaults",
+  "note": "ערכי ברירת המחדל של המחירון. העריכה עצמה נעשית בממשק הניהול (ניהול ← מחירון) ונשמרת במסד הנתונים.",
+  "currency": "ILS",
+  "basePrice": 15,
+  "baseLengthCm": 15,
+  "perExtraCm": 1,
+  "uploadReviewFee": 25,
+  "sheetPrice": 50,
+  "materialFactors": {
+    "permanent": 1,
+    "metallic": 1.35,
+    "iridescent": 1.15,
+    "glitter": 1.2
+  },
+  "complexity": {
+    "freeElements": 3,
+    "perExtraElement": 0,
+    "thinFont": 0,
+    "uploadedGraphic": 0,
+    "max": 1.6
+  },
+  "quantityTiers": [
+    { "min": 1, "discount": 0 },
+    { "min": 5, "discount": 0.08 },
+    { "min": 10, "discount": 0.15 },
+    { "min": 25, "discount": 0.22 },
+    { "min": 50, "discount": 0.28 },
+    { "min": 100, "discount": 0.35 }
+  ],
+  "shipping": {
+    "flat": 20,
+    "freeFrom": 0,
+    "pickup": 0
+  }
+}

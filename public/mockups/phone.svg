@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE8DE"/><stop offset="1" stop-color="#DED2C1"/></linearGradient>
+    <radialGradient id="light" cx="0.8" cy="0.1" r="0.9"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4D3C0"/><stop offset="0.5" stop-color="#D8C3AC"/><stop offset="1" stop-color="#C9B196"/></linearGradient>
+    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#B9A086"/><stop offset="1" stop-color="#A68C72"/></linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A3735"/><stop offset="1" stop-color="#121110"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3E2A17" stop-opacity="0.35"/><stop offset="1" stop-color="#3E2A17" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#light)"/>
+  <ellipse cx="620" cy="815" rx="230" ry="26" fill="url(#shadow)"/>
+  <rect x="444" y="114" width="320" height="696" rx="58" fill="url(#edge)"/>
+  <rect x="450" y="110" width="304" height="690" rx="54" fill="url(#case)"/>
+  <rect x="450" y="110" width="304" height="690" rx="54" fill="none" stroke="#F0E3D3" stroke-width="3" opacity="0.7"/>
+  <rect x="480" y="140" width="138" height="138" rx="34" fill="#C2AA8F"/>
+  <circle cx="518" cy="178" r="26" fill="#2A2725"/><circle cx="518" cy="178" r="18" fill="url(#lens)"/><circle cx="512" cy="172" r="5" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="518" cy="242" r="26" fill="#2A2725"/><circle cx="518" cy="242" r="18" fill="url(#lens)"/><circle cx="512" cy="236" r="5" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="584" cy="210" r="22" fill="#2A2725"/><circle cx="584" cy="210" r="15" fill="url(#lens)"/>
+  <circle cx="586" cy="160" r="7" fill="#F2E8D8"/>
+  <rect x="470" y="300" width="16" height="460" rx="8" fill="#FFFFFF" opacity="0.18"/>
+  <g transform="translate(860 560)"><ellipse cx="80" cy="190" rx="110" ry="14" fill="url(#shadow)"/><rect x="10" y="40" width="150" height="150" rx="24" fill="#F7F2EA"/><rect x="10" y="40" width="150" height="20" rx="10" fill="#000000" opacity="0.04"/><circle cx="85" cy="115" r="38" fill="#B5624A" opacity="0.85"/></g>
+  <g transform="translate(150 640)"><ellipse cx="60" cy="110" rx="80" ry="10" fill="url(#shadow)"/><path d="M20 110 L100 110 L92 40 L28 40 Z" fill="#E9E1D3"/><path d="M60 40 C50 0 30 -20 10 -40 M60 40 C70 -5 90 -25 110 -45" stroke="#6E7350" stroke-width="3" fill="none"/><ellipse cx="12" cy="-38" rx="14" ry="7" fill="#8E9470" transform="rotate(-40 12 -38)"/><ellipse cx="108" cy="-43" rx="14" ry="7" fill="#8E9470" transform="rotate(40 108 -43)"/></g>
+</svg>

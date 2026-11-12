@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D9C3A2"/><stop offset="1" stop-color="#C2A67F"/></linearGradient>
+    <radialGradient id="light" cx="0.15" cy="0.1" r="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.45"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8A8C90"/><stop offset="0.45" stop-color="#76787C"/><stop offset="1" stop-color="#5F6165"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/><stop offset="0.4" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3E2A17" stop-opacity="0.4"/><stop offset="1" stop-color="#3E2A17" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#desk)"/>
+  <g stroke="#A8865E" stroke-width="2" fill="none" opacity="0.22"><path d="M0 120 C300 110 700 135 1200 115"/><path d="M0 400 C400 390 800 415 1200 395"/><path d="M0 780 C300 770 800 795 1200 775"/></g>
+  <rect width="1200" height="900" fill="url(#light)"/>
+  <ellipse cx="610" cy="720" rx="420" ry="40" fill="url(#shadow)"/>
+  <rect x="232" y="196" width="736" height="510" rx="30" fill="#4E5054"/>
+  <rect x="240" y="190" width="720" height="504" rx="28" fill="url(#lid)"/>
+  <rect x="240" y="190" width="720" height="504" rx="28" fill="url(#sheen)"/>
+  <rect x="240" y="190" width="720" height="504" rx="28" fill="none" stroke="#A3A5A9" stroke-width="2"/>
+  <rect x="300" y="694" width="600" height="10" rx="5" fill="#3E4044"/>
+  <g transform="translate(1000 140) rotate(12)"><rect width="120" height="160" rx="6" fill="#F7F2EA"/><path d="M15 30 H100 M15 55 H90 M15 80 H105 M15 105 H80" stroke="#C9BBA6" stroke-width="4"/></g>
+  <g transform="translate(80 600)"><ellipse cx="70" cy="140" rx="90" ry="14" fill="url(#shadow)"/><circle cx="70" cy="80" r="62" fill="#F4EEE4"/><circle cx="70" cy="80" r="46" fill="#6B4A33"/><path d="M132 80 Q170 80 160 110 Q150 130 125 118" stroke="#F4EEE4" stroke-width="12" fill="none"/></g>
+</svg>

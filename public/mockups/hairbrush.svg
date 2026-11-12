@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EDE4"/><stop offset="1" stop-color="#E5DACA"/></linearGradient>
+    <radialGradient id="light" cx="0.2" cy="0.15" r="0.9"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C9B8"/><stop offset="0.5" stop-color="#DDB5A1"/><stop offset="1" stop-color="#C99A85"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B98672"/><stop offset="1" stop-color="#9E6F5D"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3E2A17" stop-opacity="0.32"/><stop offset="1" stop-color="#3E2A17" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#light)"/>
+  <g opacity="0.12" stroke="#9C8F7C" stroke-width="1.5" fill="none"><path d="M0 760 C300 740 600 790 1200 750"/><path d="M0 820 C400 800 800 840 1200 810"/></g>
+  <ellipse cx="610" cy="640" rx="470" ry="40" fill="url(#shadow)"/>
+  <path d="M600 420 L1010 432 Q1050 436 1050 462 Q1050 488 1010 492 L600 504 Z" fill="url(#edge)"/>
+  <path d="M600 414 L1008 426 Q1042 430 1042 456 Q1042 482 1008 486 L600 496 Z" fill="url(#wood)"/>
+  <ellipse cx="1012" cy="456" rx="10" ry="10" fill="#A9786A" opacity="0.6"/>
+  <ellipse cx="420" cy="470" rx="250" ry="172" fill="url(#edge)"/>
+  <ellipse cx="420" cy="458" rx="246" ry="166" fill="url(#wood)"/>
+  <ellipse cx="380" cy="400" rx="150" ry="60" fill="#FFFFFF" opacity="0.18"/>
+  <ellipse cx="420" cy="458" rx="246" ry="166" fill="none" stroke="#F4DCCF" stroke-width="3" opacity="0.7"/>
+  <g transform="translate(860 210) rotate(18)"><rect x="0" y="0" width="210" height="64" rx="32" fill="#F7F3EC"/><rect x="0" y="0" width="210" height="64" rx="32" fill="none" stroke="#D9CFC0" stroke-width="2"/><rect x="170" y="8" width="30" height="48" rx="15" fill="#C08A78"/></g>
+  <g transform="translate(130 690)"><ellipse cx="60" cy="60" rx="70" ry="10" fill="url(#shadow)"/><circle cx="60" cy="30" r="36" fill="#EFE4D1"/><circle cx="60" cy="30" r="22" fill="#E3B8AC"/></g>
+</svg>

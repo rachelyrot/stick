@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9CDBB"/><stop offset="1" stop-color="#B4B9A3"/></linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8DFD0"/><stop offset="1" stop-color="#D6C9B5"/></linearGradient>
+    <linearGradient id="latte" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D6BC"/><stop offset="0.35" stop-color="#C79F78"/><stop offset="1" stop-color="#7C5034"/></linearGradient>
+    <linearGradient id="glassEdge" x1="0" x2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/><stop offset="0.12" stop-color="#FFFFFF" stop-opacity="0.08"/><stop offset="0.85" stop-color="#FFFFFF" stop-opacity="0.05"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.45"/></linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3B3424" stop-opacity="0.3"/><stop offset="1" stop-color="#3B3424" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#wall)"/>
+  <rect y="690" width="1200" height="210" fill="url(#table)"/>
+  <rect y="690" width="1200" height="3" fill="#FFFFFF" opacity="0.5"/>
+  <ellipse cx="610" cy="772" rx="170" ry="18" fill="url(#shadow)"/>
+  <path d="M486 322 L714 322 L698 742 Q696 768 670 768 L530 768 Q504 768 502 742 Z" fill="url(#latte)"/>
+  <g fill="#FFFFFF" opacity="0.38"><rect x="520" y="300" width="70" height="66" rx="12" transform="rotate(-12 555 333)"/><rect x="606" y="292" width="74" height="70" rx="12" transform="rotate(14 643 327)"/><rect x="560" y="360" width="66" height="60" rx="12" transform="rotate(5 593 390)"/></g>
+  <path d="M470 232 L730 232 L702 750 Q699 782 666 782 L534 782 Q501 782 498 750 Z" fill="#FFFFFF" opacity="0.14"/>
+  <path d="M470 232 L730 232 L702 750 Q699 782 666 782 L534 782 Q501 782 498 750 Z" fill="url(#glassEdge)"/>
+  <path d="M470 232 L730 232 L702 750 Q699 782 666 782 L534 782 Q501 782 498 750 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="3"/>
+  <ellipse cx="600" cy="232" rx="130" ry="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="3"/>
+  <rect x="640" y="120" width="16" height="330" rx="8" fill="#6B7049" transform="rotate(12 648 285)"/>
+  <rect x="492" y="260" width="10" height="470" rx="5" fill="#FFFFFF" opacity="0.5" transform="rotate(-3 497 495)"/>
+</svg>

@@ -1,0 +1,278 @@
+<title>מודעה וקליפ Stick בצ׳יק</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500&family=Assistant:wght@400;600;700&family=Dancing+Script:wght@700&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<style>
+/* Layout: two "frames" side by side (poster 4:5, clip 9:16) on a studio table, controls beneath each */
+:root{
+  --bg:#f5efe6; --panel:#fbf8f3; --fg:#3a2a21; --muted:#8a7360; --line:#ddd2c2; --accent:#6b7049; --accent-fg:#fbf8f3;
+  --display:"Frank Ruhl Libre","Times New Roman",serif; --sans:"Assistant","Heebo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1f1712;--panel:#2a201a;--fg:#f1e9de;--muted:#b8a893;--line:#46372c;--accent:#a9ae84;--accent-fg:#1f1712;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1f1712;--panel:#2a201a;--fg:#f1e9de;--muted:#b8a893;--line:#46372c;--accent:#a9ae84;--accent-fg:#1f1712;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);direction:rtl;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:36px}
+header h1{font-family:var(--display);font-weight:300;font-size:clamp(30px,5vw,48px);margin:0;text-wrap:balance}
+header p{margin:8px 0 0;color:var(--muted);font-size:17px;max-width:62ch;line-height:1.55}
+.grid{display:grid;grid-template-columns:1.12fr 1fr;gap:28px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+figure{margin:0;display:grid;gap:14px;min-width:0}
+.frame{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:14px;display:grid;place-items:center}
+canvas{width:100%;height:auto;border-radius:12px;display:block;max-width:100%;box-shadow:0 30px 60px -36px rgba(38,27,21,.55)}
+#clip{max-width:400px}
+figcaption{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+figcaption b{font-family:var(--display);font-weight:400;font-size:22px}
+figcaption span{color:var(--muted);font-size:14px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button{font:600 14px var(--sans);border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:9px 16px;cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.copy{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 24px;display:grid;gap:10px}
+.copy h2{font-family:var(--display);font-weight:400;font-size:24px;margin:0}
+.copy pre{white-space:pre-wrap;font:16px/1.7 var(--sans);margin:0;color:var(--fg)}
+.note{color:var(--muted);font-size:14px}
+body.export{padding:0;background:#fbf8f3}
+body.export .wrap>*:not(.grid), body.export figcaption{display:none}
+body.export .frame{border:0;padding:0;border-radius:0}
+body.export canvas{border-radius:0;box-shadow:none}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>מודעה וקליפ ל-Stick בצ׳יק</h1>
+    <p>פוסט לפיד (1080×1350) וקליפ אנכי של 15 שניות לסטורי ולריל (1080×1920). הכול בצבעים, בגופנים ובהדמיות של האתר.</p>
+  </header>
+
+  <div class="grid">
+    <figure>
+      <div class="frame"><canvas id="poster" width="1080" height="1350" aria-label="מודעה: הפרטים הקטנים שעושים את זה אישי"></canvas></div>
+      <figcaption><b>מודעה לפיד</b><span>1080×1350 · אינסטגרם / פייסבוק</span></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><canvas id="clip" width="1080" height="1920" aria-label="קליפ: מקלידים שם, המכונה חותכת, והמדבקה נחה על בקבוק, צנצנת וספל"></canvas></div>
+      <figcaption><b>קליפ 15 שניות</b>
+        <div class="btns"><button id="play" class="primary" type="button">הפעלה מההתחלה</button><button id="pause" type="button">עצירה</button></div>
+      </figcaption>
+    </figure>
+  </div>
+
+  <section class="copy">
+    <h2>טקסט לפוסט</h2>
+<pre id="caption">הפרטים הקטנים שעושים את זה אישי ✦
+
+שם על הבקבוק של הילדים, "סוכר" על הצנצנת במזווה, לוגו על האריזה של העסק.
+מדבקות ויניל בחיתוך צורני, בלי רקע, רק האותיות והצורות.
+
+מקלידים, בוחרים צבע ומידה, ורואים הדמיה על החפץ עוד לפני שמזמינים.
+משלוחים לכל הארץ · איסוף עצמי בתיאום
+
+#מדבקות #מדבקותויניל #מדבקהבהתאמהאישית #מתנהאישית #מיתוגלעסקים #סטיקבציק</pre>
+    <div class="btns"><button id="copyBtn" type="button">העתקת הטקסט</button></div>
+  </section>
+</div>
+
+<script>
+const IMG = __IMAGES__;
+const C = {ivory:"#fbf8f3",cream:"#f5efe6",sand:"#ede4d6",stone:"#ddd2c2",taupe:"#b8a893",mocha:"#8a7360",cocoa:"#6b5242",choco:"#3a2a21",ink:"#261b15",olive:"#6b7049",oliveDark:"#50553a",oliveSoft:"#dfe0cc",clay:"#b5624a",rose:"#B07A68"};
+const DISP='"Frank Ruhl Libre", "Times New Roman", serif', SANS='"Assistant", "Heebo", Arial, sans-serif', SCRIPT='"Dancing Script", cursive', LATIN='"Cormorant Garamond", serif';
+const imgs = {};
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const ease=t=>1-Math.pow(1-clamp(t),3);
+const easeIO=t=>{t=clamp(t);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+const back=t=>{t=clamp(t);const c=1.6;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)};
+const prog=(t,a,b)=>clamp((t-a)/(b-a));
+
+function rr(g,x,y,w,h,r){g.beginPath();g.roundRect(x,y,w,h,r)}
+function txt(g,s,x,y,font,color,align="center",alpha=1){g.save();g.globalAlpha*=alpha;g.font=font;g.fillStyle=color;g.textAlign=align;g.textBaseline="alphabetic";g.direction="rtl";g.fillText(s,x,y);g.restore()}
+
+/* the sticker itself: text on a mockup, with optional cut animation */
+function sticker(g,s,cx,cy,size,color,font,{cut=1,fill=1,alpha=1,dir="ltr"}={}){
+  g.save();g.globalAlpha*=alpha;g.font=`${font.weight||700} ${size}px ${font.family}`;g.textAlign="center";g.textBaseline="middle";g.direction=dir;
+  if(cut<1||fill<1){
+    const w=g.measureText(s).width;const L=w*7;
+    g.setLineDash([L*cut,L]);g.lineWidth=Math.max(1.5,size/40);g.strokeStyle=color;g.strokeText(s,cx,cy);g.setLineDash([]);
+  }
+  if(fill>0){g.globalAlpha*=fill;g.fillStyle=color;g.fillText(s,cx,cy)}
+  g.restore();
+}
+function mockup(g,id,x,y,w,radius=28){
+  const im=imgs[id];const h=w*0.75;
+  g.save();rr(g,x,y,w,h,radius);g.clip();g.drawImage(im,x,y,w,h);g.restore();
+  return {x,y,w,h};
+}
+const AREA={bottle:{cx:.5,cy:.58,w:.16},jar:{cx:.5,cy:.64,w:.2},mug:{cx:.497,cy:.59,w:.21},"kraft-box":{cx:.5,cy:.69,w:.34}};
+function onMock(r,id){const a=AREA[id];return {x:r.x+r.w*a.cx,y:r.y+r.h*a.cy,w:r.w*a.w}}
+
+function logo(g,x,y,scale,color,align="center"){
+  g.save();g.direction="ltr";g.textBaseline="alphabetic";
+  const f1=`italic 500 ${64*scale}px ${LATIN}`, f2=`400 ${56*scale}px ${DISP}`;
+  g.font=f1;const w1=g.measureText("Stick").width;g.font=f2;const w2=g.measureText("בצ׳יק").width;const gap=14*scale;const tw=w1+gap+w2;
+  let sx=align==="center"?x-tw/2:align==="right"?x-tw:x;
+  g.font=f1;g.fillStyle=color;g.textAlign="left";g.fillText("Stick",sx,y);
+  g.font=f2;g.fillStyle=C.olive;if(color!==C.choco)g.fillStyle=C.oliveSoft;g.fillText("בצ׳יק",sx+w1+gap,y);
+  g.restore();
+}
+function pill(g,s,cx,cy,font,bg,fg,padX=34,h=76){
+  g.save();g.font=font;g.direction="rtl";const w=g.measureText(s).width+padX*2;rr(g,cx-w/2,cy-h/2,w,h,h/2);g.fillStyle=bg;g.fill();
+  g.fillStyle=fg;g.textAlign="center";g.textBaseline="middle";g.fillText(s,cx,cy+2);g.restore();return w;
+}
+function blob(g,x,y,r,color,a=1){g.save();g.globalAlpha=a;const gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,color);gr.addColorStop(1,color+"00");g.fillStyle=gr;g.fillRect(x-r,y-r,r*2,r*2);g.restore()}
+
+/* ---------- POSTER 1080x1350 ---------- */
+function drawPoster(){
+  const g=document.getElementById("poster").getContext("2d");const W=1080,H=1350;
+  g.fillStyle=C.ivory;g.fillRect(0,0,W,H);
+  blob(g,980,260,520,"#dfe0cc",.9);blob(g,80,1180,460,"#ede4d6",1);
+  // eyebrow
+  g.save();g.font=`600 26px ${SANS}`;g.direction="rtl";const eb="מדבקות ויניל בחיתוך צורני · בעבודת יד";const ew=g.measureText(eb).width+70;
+  rr(g,W-72-ew,70,ew,58,29);g.strokeStyle=C.stone;g.lineWidth=2;g.stroke();g.fillStyle=C.olive;g.beginPath();g.arc(W-72-26,99,6,0,7);g.fill();
+  g.fillStyle=C.cocoa;g.textAlign="right";g.textBaseline="middle";g.fillText(eb,W-72-44,100);g.restore();
+  // headline
+  txt(g,"הפרטים הקטנים",W-72,262,`300 104px ${DISP}`,C.choco,"right");
+  txt(g,"שעושים את זה",W-72,374,`300 104px ${DISP}`,C.choco,"right");
+  g.save();g.font=`400 104px ${DISP}`;g.direction="rtl";const xw=g.measureText("שעושים את זה ").width;g.restore();
+  txt(g,"אישי.",W-72-xw,374,`400 104px ${DISP}`,C.olive,"right");
+  g.save();g.font=`400 104px ${DISP}`;const aw=g.measureText("אישי.").width;g.strokeStyle=C.olive+"88";g.lineWidth=5;g.lineCap="round";
+  const ux=W-72-xw;g.beginPath();g.moveTo(ux,398);g.quadraticCurveTo(ux-aw*.4,384,ux-aw,392);g.stroke();g.restore();
+  // hero mockup: bottle with Maya
+  const r=mockup(g,"bottle",72,452,936,34);
+  const p=onMock(r,"bottle");sticker(g,"Maya",p.x,p.y,p.w*0.52,C.rose,{family:SCRIPT});
+  // cut tag
+  g.save();g.font=`600 24px ${SANS}`;const tg="חיתוך לפי קווי המתאר · 10×4 ס״מ";const tw=g.measureText(tg).width+110;
+  rr(g,r.x+r.w-24-tw,r.y+r.h-24-64,tw,64,32);g.fillStyle="rgba(251,248,243,.9)";g.fill();
+  g.setLineDash([5,5]);g.strokeStyle=C.choco+"99";g.lineWidth=1.6;g.beginPath();g.arc(r.x+r.w-24-36,r.y+r.h-24-32,22,0,7);g.stroke();g.setLineDash([]);
+  g.font=`italic 500 24px ${LATIN}`;g.fillStyle=C.choco;g.textAlign="center";g.textBaseline="middle";g.fillText("cut",r.x+r.w-24-36,r.y+r.h-24-34);
+  g.font=`600 24px ${SANS}`;g.direction="rtl";g.textAlign="right";g.fillText(tg,r.x+r.w-24-70,r.y+r.h-24-31);g.restore();
+  // small mockups
+  const s1=mockup(g,"jar",72,1170-88,214,20);const q1=onMock(s1,"jar");sticker(g,"סוכר",q1.x,q1.y,q1.w*0.42,C.choco,{family:DISP,weight:500},{dir:"rtl"});
+  const s2=mockup(g,"mug",302,1170-88,214,20);const q2=onMock(s2,"mug");sticker(g,"בוקר טוב",q2.x,q2.y,q2.w*0.27,C.choco,{family:DISP,weight:500},{dir:"rtl"});
+  // copy on the right of bottom row
+  txt(g,"שם, משפט או לוגו.",W-72,1130,`600 36px ${SANS}`,C.choco,"right");
+  txt(g,"בלי רקע, רק העיצוב.",W-72,1176,`400 32px ${SANS}`,C.cocoa,"right");
+  pill(g,"מעצבים בסטודיו באתר ←",W-72-182,1252,`700 30px ${SANS}`,C.olive,C.ivory,36,72);
+  // footer
+  g.fillStyle=C.stone;g.fillRect(72,1316,936,1);
+  logo(g,72,1300+0,0.5,C.choco,"left");
+  txt(g,"@stickstudio",W-72,1300+0,`600 22px ${SANS}`,C.mocha,"right");
+}
+
+/* ---------- CLIP 1080x1920, 15s ---------- */
+const DUR=15;
+function drawClip(t){
+  const cv=document.getElementById("clip"),g=cv.getContext("2d");const W=1080,H=1920;
+  g.save();g.clearRect(0,0,W,H);
+
+  // Scene 1 (0-2.6): dark hook
+  if(t<2.9){
+    g.fillStyle=C.choco;g.fillRect(0,0,W,H);
+    blob(g,W*.85,H*.2,600,"#50553a",.55);
+    const a=prog(t,.15,.8),b=prog(t,.7,1.35),c=prog(t,1.3,1.9);
+    txt(g,"רוצים שזה יהיה",W/2,820-30*(1-ease(a)),`300 104px ${DISP}`,C.ivory,"center",ease(a));
+    txt(g,"רק שלכם?",W/2,960-30*(1-ease(b)),`400 132px ${DISP}`,C.oliveSoft,"center",ease(b));
+    txt(g,"שם. משפט. לוגו.",W/2,1120,`600 46px ${SANS}`,C.taupe,"center",ease(c));
+    const out=prog(t,2.4,2.9);if(out>0){g.fillStyle=C.ivory;g.globalAlpha=easeIO(out);g.fillRect(0,0,W,H);g.globalAlpha=1}
+  }
+  // Scene 2 (2.6-7): studio typing + cutting
+  else if(t<7.3){
+    g.fillStyle=C.ivory;g.fillRect(0,0,W,H);blob(g,120,300,520,"#dfe0cc",.9);
+    txt(g,"1. מקלידים",W-90,250,`600 40px ${SANS}`,C.olive,"right",ease(prog(t,2.9,3.3)));
+    // input field
+    const fy=300;g.save();rr(g,90,fy,900,140,28);g.fillStyle="#fff";g.fill();g.strokeStyle=C.stone;g.lineWidth=2;g.stroke();g.restore();
+    const word="Maya";const n=Math.floor(clamp((t-3.1)/0.9)*word.length+0.0001);const shown=word.slice(0,n);
+    g.save();g.font=`700 80px ${SCRIPT}`;g.direction="ltr";g.textAlign="left";g.textBaseline="middle";g.fillStyle=C.choco;g.fillText(shown,140,fy+72);
+    const cw=g.measureText(shown).width;if(Math.floor(t*2.4)%2===0&&t<4.6){g.fillStyle=C.olive;g.fillRect(146+cw,fy+30,4,86)}g.restore();
+    // swatches
+    const sw=[C.choco,C.rose,C.olive,C.clay,"#c9a75b","#ffffff"];const pick=t>4.3?1:0;
+    txt(g,"2. בוחרים צבע",W-90,560,`600 40px ${SANS}`,C.olive,"right",ease(prog(t,4.0,4.4)));
+    sw.forEach((c,i)=>{const x=W-140-i*120,y=640;const sel=i===pick&&t>4.3;g.save();g.globalAlpha=ease(prog(t,4.0+i*.05,4.4+i*.05));g.beginPath();g.arc(x,y,40,0,7);g.fillStyle=c;g.fill();g.strokeStyle=C.stone;g.lineWidth=2;g.stroke();
+      if(sel){g.beginPath();g.arc(x,y,52,0,7);g.strokeStyle=C.choco;g.lineWidth=4;g.stroke()}g.restore()});
+    // cutting mat
+    txt(g,"3. אנחנו חותכים",W-90,820,`600 40px ${SANS}`,C.olive,"right",ease(prog(t,4.7,5.1)));
+    const my=870,mh=720;g.save();rr(g,90,my,900,mh,30);g.fillStyle="#7d9a8c";g.fill();g.clip();
+    g.strokeStyle="rgba(255,255,255,.18)";g.lineWidth=1.5;for(let x=90;x<990;x+=60){g.beginPath();g.moveTo(x,my);g.lineTo(x,my+mh);g.stroke()}for(let y=my;y<my+mh;y+=60){g.beginPath();g.moveTo(90,y);g.lineTo(990,y);g.stroke()}
+    // vinyl sheet
+    rr(g,170,my+120,740,480,10);g.fillStyle="#e9c3b5";g.fill();g.restore();
+    const cut=prog(t,4.9,6.3),weed=prog(t,6.4,7.0);
+    // weeding: background vinyl fades away leaving letters
+    if(weed>0){g.save();rr(g,170,my+120,740,480,10);g.fillStyle="#7d9a8c";g.globalAlpha=ease(weed);g.fill();g.restore()}
+    sticker(g,"Maya",540,my+360,230,weed>0?C.rose:"#8e5a49",{family:SCRIPT},{cut:ease(cut),fill:weed>0?1:0});
+    // blade
+    if(cut>0&&cut<1){const bx=200+680*cut+Math.sin(cut*40)*30,by=my+360+Math.sin(cut*23)*90;g.save();g.fillStyle=C.ink;g.beginPath();g.arc(bx,by,14,0,7);g.fill();g.strokeStyle=C.ink;g.lineWidth=10;g.beginPath();g.moveTo(bx,by);g.lineTo(bx+40,by-140);g.stroke();g.restore()}
+    txt(g,"נחתך לפי קווי המתאר. בלי רקע.",W/2,1720,`400 52px ${DISP}`,C.choco,"center",ease(prog(t,6.3,6.8)));
+    const out=prog(t,6.9,7.3);if(out>0){g.fillStyle=C.cream;g.globalAlpha=out;g.fillRect(0,0,W,H);g.globalAlpha=1}
+  }
+  // Scene 3 (7.3-11.4): on objects
+  else if(t<11.6){
+    g.fillStyle=C.cream;g.fillRect(0,0,W,H);
+    txt(g,"על כל חפץ",W/2,250,`300 110px ${DISP}`,C.choco,"center",ease(prog(t,7.4,7.9)));
+    txt(g,"ורואים הדמיה לפני שמזמינים",W/2,340,`600 44px ${SANS}`,C.mocha,"center",ease(prog(t,7.6,8.1)));
+    const items=[["bottle","Maya",SCRIPT,700,.52,C.rose,"ltr",7.5],["jar","סוכר",DISP,500,.42,C.choco,"rtl",8.6],["mug","בוקר טוב",DISP,500,.27,C.choco,"rtl",9.5],["kraft-box","Stick",LATIN,500,.36,C.choco,"ltr",10.3]];
+    // big card cycles; previous ones stack as thumbnails
+    let cur=0;items.forEach((it,i)=>{if(t>=it[7])cur=i});
+    const it=items[cur];const k=prog(t,it[7],it[7]+.55);
+    const cw=920,cx=(W-cw)/2,cy=470;
+    g.save();g.translate(W/2,cy+cw*.375);g.rotate((1-ease(k))*-.06);g.scale(.9+.1*back(k),.9+.1*back(k));g.translate(-W/2,-(cy+cw*.375));g.globalAlpha=ease(k*1.5);
+    g.shadowColor="rgba(38,27,21,.35)";g.shadowBlur=60;g.shadowOffsetY=30;rr(g,cx,cy,cw,cw*.75,36);g.fillStyle=C.sand;g.fill();g.shadowColor="transparent";
+    const r=mockup(g,it[0],cx,cy,cw,36);const p=onMock(r,it[0]);
+    const land=prog(t,it[7]+.3,it[7]+.8);
+    g.save();g.translate(p.x,p.y-180*(1-ease(land)));const sc=1.6-.6*ease(land);g.scale(sc,sc);
+    sticker(g,it[1],0,0,p.w*it[4],it[5],{family:it[2],weight:it[3]},{dir:it[6],alpha:ease(land*2)});g.restore();
+    g.restore();
+    // labels
+    const labels={bottle:"בקבוק לגן",jar:"צנצנת במזווה",mug:"ספל של בוקר",["kraft-box"]:"אריזה לעסק"};
+    pill(g,labels[it[0]],W/2,1290,`700 40px ${SANS}`,C.choco,C.ivory,40,84);
+    // progress dots
+    items.forEach((_,i)=>{g.beginPath();g.arc(W/2+(1.5-i)*36,1400,i===cur?10:7,0,7);g.fillStyle=i===cur?C.olive:C.taupe;g.fill()});
+    // features
+    const fs=[["בלי רקע","רק האותיות והצורות"],["ויניל איכותי","עמיד למים ולשטיפה ידנית"],["משלוח עד הבית","לכל הארץ"]];
+    fs.forEach((f,i)=>{const a=ease(prog(t,8.2+i*.25,8.7+i*.25));const y=1520+i*112;g.save();g.globalAlpha=a;g.fillStyle=C.stone;g.fillRect(140,y+40,800,1.5);g.restore();
+      txt(g,f[0],W-140,y,`500 50px ${DISP}`,C.choco,"right",a);txt(g,f[1],140,y,`400 36px ${SANS}`,C.cocoa,"left",a)});
+    const out=prog(t,11.2,11.6);if(out>0){g.fillStyle=C.olive;g.globalAlpha=easeIO(out);g.fillRect(0,0,W,H);g.globalAlpha=1}
+  }
+  // Scene 4 (11.6-15): end card
+  else{
+    g.fillStyle=C.olive;g.fillRect(0,0,W,H);blob(g,W*.2,H*.15,620,"#50553a",.8);blob(g,W*.9,H*.9,560,"#8a8f62",.6);
+    const a=ease(prog(t,11.7,12.3)),b=ease(prog(t,12.2,12.8)),c=ease(prog(t,12.8,13.4));
+    g.save();g.globalAlpha=a;g.translate(0,30*(1-a));
+    g.save();g.direction="ltr";g.font=`italic 500 190px ${LATIN}`;g.textAlign="center";g.fillStyle=C.ivory;g.fillText("Stick",W/2,760);g.font=`400 150px ${DISP}`;g.fillStyle=C.oliveSoft;g.fillText("בצ׳יק",W/2,930);g.restore();
+    g.restore();
+    g.save();g.strokeStyle=C.ivory+"55";g.lineWidth=2;g.setLineDash([12,10]);g.beginPath();g.ellipse(W/2,800,420*b,270*b,0,0,7);g.stroke();g.restore();
+    txt(g,"הרעיון שלך. העיצוב שלך.",W/2,1180,`300 70px ${DISP}`,C.ivory,"center",b);
+    txt(g,"המדבקה שלך.",W/2,1280,`400 70px ${DISP}`,C.ivory,"center",b);
+    g.save();g.globalAlpha=c;pill(g,"מעצבים עכשיו באתר",W/2,1480,`700 50px ${SANS}`,C.ivory,C.oliveDark,56,110);g.restore();
+    txt(g,"@stickstudio · משלוחים לכל הארץ",W/2,1640,`600 40px ${SANS}`,C.oliveSoft,"center",c);
+  }
+  g.restore();
+}
+
+/* ---------- playback ---------- */
+let start=performance.now(),paused=false,pausedAt=0,raf=0;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function loop(now){const t=((now-start)/1000)%DUR;drawClip(t);raf=requestAnimationFrame(loop)}
+function play(){cancelAnimationFrame(raf);start=performance.now();paused=false;raf=requestAnimationFrame(loop);pauseBtn.textContent="עצירה"}
+const pauseBtn=document.getElementById("pause");
+pauseBtn.onclick=()=>{if(paused){start=performance.now()-pausedAt*1000;paused=false;raf=requestAnimationFrame(loop);pauseBtn.textContent="עצירה"}else{pausedAt=((performance.now()-start)/1000)%DUR;paused=true;cancelAnimationFrame(raf);pauseBtn.textContent="המשך"}};
+document.getElementById("play").onclick=play;
+document.getElementById("copyBtn").onclick=async e=>{const s=document.getElementById("caption").textContent;try{await navigator.clipboard.writeText(s);e.target.textContent="הועתק"}catch{const r=document.createRange();r.selectNodeContents(document.getElementById("caption"));const sel=getSelection();sel.removeAllRanges();sel.addRange(r);e.target.textContent="הטקסט מסומן, אפשר להעתיק"}};
+
+/* exported hook for headless recording */
+window.recordClip=async(fps=30)=>{
+  cancelAnimationFrame(raf);const cv=document.getElementById("clip");
+  const mime=["video/mp4;codecs=avc1.640028","video/mp4","video/webm;codecs=vp9"].find(m=>MediaRecorder.isTypeSupported(m));
+  const st=cv.captureStream(fps);const rec=new MediaRecorder(st,{mimeType:mime,videoBitsPerSecond:12e6});const chunks=[];rec.ondataavailable=e=>chunks.push(e.data);
+  const done=new Promise(r=>rec.onstop=r);drawClip(0);rec.start();const t0=performance.now();
+  await new Promise(res=>{function f(now){const t=(now-t0)/1000;if(t>=DUR){drawClip(DUR-0.001);setTimeout(()=>{rec.stop();res()},120);return}drawClip(t);requestAnimationFrame(f)}requestAnimationFrame(f)});
+  await done;const blob=new Blob(chunks,{type:mime});const buf=new Uint8Array(await blob.arrayBuffer());let s="";for(let i=0;i<buf.length;i+=32768)s+=String.fromCharCode.apply(null,buf.subarray(i,i+32768));return {mime,b64:btoa(s)};
+};
+
+async function boot(){
+  await Promise.all(Object.entries(IMG).map(([k,src])=>new Promise(r=>{const i=new Image();i.onload=()=>{imgs[k]=i;r()};i.onerror=r;i.src=src})));
+  try{await Promise.all([`300 40px "Frank Ruhl Libre"`,`400 40px "Frank Ruhl Libre"`,`500 40px "Frank Ruhl Libre"`,`600 40px Assistant`,`700 40px Assistant`,`400 40px Assistant`,`700 40px "Dancing Script"`,`italic 500 40px "Cormorant Garamond"`].map(f=>document.fonts.load(f,"אבג Maya")));}catch{}
+  drawPoster();
+  if(location.hash==="#export"){document.body.classList.add("export");drawClip(13.6);window.ready=true;return}
+  if(reduce){drawClip(9.2)}else play();
+  window.ready=true;
+}
+boot();
+</script>
