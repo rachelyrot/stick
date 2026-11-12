@@ -47,12 +47,14 @@ export default function AboutPage() {
                   {BRAND.contact.email}
                 </a>
               </li>
-              <li className="flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-ivory text-olive">
-                  <Phone className="h-5 w-5" strokeWidth={1.4} />
-                </span>
-                {BRAND.contact.phoneDisplay}
-              </li>
+              {BRAND.contact.phoneDisplay && (
+                <li className="flex items-center gap-4">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-ivory text-olive">
+                    <Phone className="h-5 w-5" strokeWidth={1.4} />
+                  </span>
+                  {BRAND.contact.phoneDisplay}
+                </li>
+              )}
               <li className="flex items-center gap-4">
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-ivory text-olive">
                   <MapPin className="h-5 w-5" strokeWidth={1.4} />

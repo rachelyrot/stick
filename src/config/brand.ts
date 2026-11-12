@@ -14,11 +14,11 @@ export const BRAND = {
   /** פרטי קשר לדוגמה — יש להחליף בפרטים האמיתיים לפני עלייה לאוויר */
   contact: {
     email: "stickbetsik@gmail.com",
-    phoneDisplay: "050-000-0000 (לדוגמה)",
+    phoneDisplay: "", // ריק = שורת הטלפון לא תוצג
     whatsappNumber: "", // מספר בפורמט בינלאומי ללא +, לדוגמה 972500000000. ריק = הכפתור לא יוצג
     instagram: "stickstudio",
     area: "משלוחים לכל הארץ · איסוף עצמי בתיאום",
   },
   /** כל עוד אין Backend וסליקה — האתר רץ במצב הדגמה */
-  demoMode: true,
+  demoMode: false,
 } as const;
